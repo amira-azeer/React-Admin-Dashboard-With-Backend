@@ -1,0 +1,4 @@
+# During git push, node modules and .env files are ignored
+
+/node_modules
+.env
