@@ -6,7 +6,7 @@ import { themeSettings } from "theme";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
-
+import Products from "scenes/products";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -23,6 +23,7 @@ function App() {
             <Route element={ <Layout/> }>  {/* Every layout will have the nav bar and the side bar */}
               <Route path="/" element={ <Navigate to="/dashboard" replace/> }/> {/* Default navigation */}
               <Route path="/dashboard" element={ <Dashboard/> }/> {/* This is for when you sign into the homepage and get redirected here */}
+              <Route path="/products" element={ <Products/>} />
 
             </Route>
           </Routes>
