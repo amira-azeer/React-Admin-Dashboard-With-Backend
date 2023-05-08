@@ -25,9 +25,9 @@ app.use(cors());
 
 
 // Data Imports
-import User from "./models/user.js"; // Importing the model for data injection
-import Product from "./models/Product.js";
-import ProductStat from "./models/ProductStat.js";
+// import User from "./models/User.js"; // Importing the model for data injection
+// import Product from "./models/Product.js";
+// import ProductStat from "./models/ProductStat.js";
 
 import { dataUser, dataProduct, dataProductStat } from "./data/index.js"; // Mock data for injection
  
