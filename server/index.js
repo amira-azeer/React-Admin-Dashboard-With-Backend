@@ -28,6 +28,7 @@ app.use(cors());
 // import User from "./models/User.js"; // Importing the model for data injection
 // import Product from "./models/Product.js";
 // import ProductStat from "./models/ProductStat.js";
+// import NewSchema from "./models/TestRun.js";
 
 import { dataUser, dataProduct, dataProductStat } from "./data/index.js"; // Mock data for injection
  
@@ -53,6 +54,9 @@ mongoose.connect(process.env.MONGO_URL, {
     // Only add data once to prevent duplications 
     // User.insertMany(dataUser)
     // Product.insertMany(dataProduct)
+
+    // NewSchema.find()
+    
     // ProductStat.insertMany(dataProductStat)
     
 
