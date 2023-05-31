@@ -11,58 +11,55 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
-
 // CONFIGURATIONS
 dotEnv.config();
 const app = express();
-app.use(express.json()); // Enable express for routing 
+app.use(express.json()); // Enable express for routing
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"})); // Make API calls from another server
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" })); // Make API calls from another server
 app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-
 // Data Imports
-// import User from "./models/User.js"; // Importing the model for data injection
-// import Product from "./models/Product.js";
-// import ProductStat from "./models/ProductStat.js";
-// import NewSchema from "./models/TestRun.js";
+import User from "./models/User.js"; // Importing the model for data injection
+import Product from "./models/Product.js";
+import ProductStat from "./models/ProductStat.js";
+import Transaction from "./models/Transaction.js";
 
-import { dataUser, dataProduct, dataProductStat } from "./data/index.js"; // Mock data for injection
- 
+import {
+  dataUser,
+  dataProduct,
+  dataProductStat,
+  dataTransaction,
+} from "./data/index.js"; // Mock data for injection
 
-// Routes 
+// Routes
 app.use("/client", clientRoutes);
 app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
-
 // Mongoose Set Up
 const PORT = process.env.PORT || 9000; // Backup Port
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => {
+  })
+  .then(() => {
     app.listen(PORT, () => {
-        console.log(`Server Port : ${PORT}`);
-    })
+      console.log(`Server Port : ${PORT}`);
+    });
 
-    // Only add data once to prevent duplications 
+    // Only add data once to prevent duplications
     // User.insertMany(dataUser)
     // Product.insertMany(dataProduct)
-
-    // NewSchema.find()
-    
     // ProductStat.insertMany(dataProductStat)
-    
-
-}).catch((error) => {
-    console.log(`${error} did not connect`)
-})
-
-
-
+    // Transaction.insertMany(dataTransaction);
+  })
+  .catch((error) => {
+    console.log(`${error} did not connect`);
+  });

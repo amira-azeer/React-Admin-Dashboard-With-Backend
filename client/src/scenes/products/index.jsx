@@ -11,7 +11,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
-import Header from "components/header";
+import Header from "components/Header";
 import { useGetProductsQuery } from "state/api";
 
 const Product = ({
@@ -58,19 +58,34 @@ const Product = ({
       </CardContent>
 
       <CardActions>
-        <Button variant="primary" size="small" onClick={() => setIsExpanded(!isExapanded)}>See More</Button>
+        <Button
+          variant="primary"
+          size="small"
+          onClick={() => setIsExpanded(!isExapanded)}
+        >
+          See More
+        </Button>
       </CardActions>
 
-
-      <Collapse in={isExapanded} timeout="auto" unmountOnExit sx={{ color: theme.palette.neutral[300] }}>
+      <Collapse
+        in={isExapanded}
+        timeout="auto"
+        unmountOnExit
+        sx={{ color: theme.palette.neutral[300] }}
+      >
         <CardContent>
           <Typography> ID : {_id} </Typography>
           <Typography> Supply Left : {supply} </Typography>
-          <Typography> Yearly Sales This Year : {stat.yearlySalesTotal} </Typography>
-          <Typography> Yearly Units Sold This Year : {stat.yearlyTotalSoldUnits} </Typography>
+          <Typography>
+            {" "}
+            Yearly Sales This Year : {stat.yearlySalesTotal}{" "}
+          </Typography>
+          <Typography>
+            {" "}
+            Yearly Units Sold This Year : {stat.yearlyTotalSoldUnits}{" "}
+          </Typography>
         </CardContent>
       </Collapse>
-
     </Card>
   );
 };
@@ -96,29 +111,30 @@ const Products = () => {
             "& > div": { gridColumn: isNonMobile ? undefined : "span 4" }, // Span 4 takes up the entire width
           }}
         >
-          {data.map(({
-            _id,
-            name,
-            description,
-            price,
-            rating,
-            category,
-            supply,
-            stat,
-          }) => ( 
-            <Product  
-              key={_id}
-              _id = { _id}
-              name = {name}
-              description = {description}
-              price = {price}
-              rating = {rating}
-              category = {category}
-              supply = {supply}
-              stat = {stat}
-            />
-          ))}
-
+          {data.map(
+            ({
+              _id,
+              name,
+              description,
+              price,
+              rating,
+              category,
+              supply,
+              stat,
+            }) => (
+              <Product
+                key={_id}
+                _id={_id}
+                name={name}
+                description={description}
+                price={price}
+                rating={rating}
+                category={category}
+                supply={supply}
+                stat={stat}
+              />
+            )
+          )}
         </Box>
       ) : (
         <>Loading...</>

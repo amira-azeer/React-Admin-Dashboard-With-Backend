@@ -8,6 +8,7 @@ import Dashboard from "scenes/dashboard";
 import Layout from "scenes/layout";
 import Products from "scenes/products";
 import Customers from "scenes/customers";
+import Transaction from "scenes/transaction";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/dashboard" element={ <Dashboard/> }/> {/* This is for when you sign into the homepage and get redirected here */}
               <Route path="/products" element={ <Products/>} />
               <Route path="/customers" element={<Customers/>} />
+              <Route path="/transactions" element={<Transaction/>} />
 
             </Route>
           </Routes>
