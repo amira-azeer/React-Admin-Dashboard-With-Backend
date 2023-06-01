@@ -11,11 +11,11 @@ const ProductStatSchema = new Schema({
         totalSales : Number,
         totalUnits : Number,
     }],
-  dailyData : {
+  dailyData : [{
     date : String,
     totalSales : Number,
     totalUnits : Number,
-  },  
+  }],  
 },
     { timestamps : true }
 );

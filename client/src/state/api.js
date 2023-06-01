@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }), // Environment variable
   reducerPath: "adminApi", // Slice name
-  tagTypes: ["User", "Products", "Customers", "Transactions", "Geography"], // Helps identify particular data
+  tagTypes: ["User", "Products", "Customers", "Transactions", "Geography", "Sales"], // Helps identify particular data
   endpoints: (build) => ({
     getUser: build.query({
       query: (id) => `general/user/${id}`,
@@ -34,6 +34,11 @@ export const api = createApi({
       providesTags: ["Geography"]
     }),
 
+    getSales: build.query({
+      query: () => "sales/sales",
+      providesTags: ["Sales"]
+    }),
+
     
   }),
 });
@@ -45,5 +50,5 @@ export const {
   useGetCustomersQuery,
   useGetTransactionsQuery,
   useGetGeographyQuery,
-
+  useGetSalesQuery,
 } = api;

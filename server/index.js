@@ -27,12 +27,14 @@ import User from "./models/User.js"; // Importing the model for data injection
 import Product from "./models/Product.js";
 import ProductStat from "./models/ProductStat.js";
 import Transaction from "./models/Transaction.js";
+import OverallStats from "./models/OverallStats.js";
 
 import {
   dataUser,
   dataProduct,
   dataProductStat,
   dataTransaction,
+  dataOverallStat, // Only 2021 stats available, no other years
 } from "./data/index.js"; // Mock data for injection
 
 // Routes
@@ -59,6 +61,7 @@ mongoose
     // Product.insertMany(dataProduct)
     // ProductStat.insertMany(dataProductStat)
     // Transaction.insertMany(dataTransaction);
+    // OverallStats.insertMany(dataOverallStat);
   })
   .catch((error) => {
     console.log(`${error} did not connect`);
