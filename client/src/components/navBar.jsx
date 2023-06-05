@@ -13,7 +13,6 @@ import { setMode } from "state";
 import profileImage from "assets/profile.jpeg";
 import {
   AppBar,
-  Icon,
   IconButton,
   InputBase,
   Toolbar,

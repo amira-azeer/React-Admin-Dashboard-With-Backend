@@ -12,7 +12,7 @@ import Transaction from "scenes/transaction";
 import Geography from "scenes/geography";
 import Sales from "scenes/overview";
 import Daily from "scenes/daily";
-
+import Monthly from "scenes/monthly";
 
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
               <Route path="/geography" element={<Geography/>} />
               <Route path="/overview" element={<Sales/>} />
               <Route path="/daily" element={<Daily/>} />
+              <Route path="/monthly" element={<Monthly/>} />
               
             </Route>
           </Routes>
