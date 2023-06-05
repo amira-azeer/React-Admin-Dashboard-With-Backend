@@ -10,7 +10,7 @@ const Geography = () => {
 
     const theme = useTheme();
     const { data } = useGetGeographyQuery();
-    console.log("geoData", data)
+    // console.log("geoData", data)
 
   return (
     <Box m="1.5rem 2.5rem">

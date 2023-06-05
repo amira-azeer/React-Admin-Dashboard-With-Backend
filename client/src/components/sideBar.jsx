@@ -150,7 +150,7 @@ const SideBar = ({
                 if (!icon) {
                   return (
                     <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
-                      text
+                      {text}
                     </Typography>
                   );
                 }
