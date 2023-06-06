@@ -15,7 +15,7 @@ import Daily from "scenes/daily";
 import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
-
+import Performance from "scenes/performance";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -27,9 +27,10 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          
           <Routes>
             
-            <Route element={ <Layout/> }>  {/* Every layout will have the nav bar and the side bar */}
+            <Route element={ <Layout/> }>  {/* Every layout will have the nav bar and the side bar on every page */}
               <Route path="/" element={ <Navigate to="/dashboard" replace/> }/> {/* Default navigation */}
               <Route path="/dashboard" element={ <Dashboard/> }/> {/* This is for when you sign into the homepage and get redirected here */}
               <Route path="/products" element={ <Products/>} />
@@ -41,8 +42,9 @@ function App() {
               <Route path="/monthly" element={<Monthly/>} />
               <Route path="/breakdown" element={<Breakdown/>} />
               <Route path="/admin" element={<Admin/>} />
-
+              <Route path="/performance" element={<Performance/>} />
             </Route>
+
           </Routes>
 
         </ThemeProvider>
