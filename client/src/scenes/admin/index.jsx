@@ -87,9 +87,9 @@ const Admin = () => {
           getRowId={(row) => row._id}
           rows={data || []}
           columns={columns}
-        //   components={{
-        //     ColumnMenu: CustomColumnMenu,
-        //   }}
+          components={{
+            ColumnMenu: CustomColumnMenu,
+          }}
         />
       </Box>
     </Box>
