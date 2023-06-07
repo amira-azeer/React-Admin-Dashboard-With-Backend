@@ -17,3 +17,7 @@ The command below is issued to intiate the application from both the client and 
 ```
 
 ## **Dashboard Demostration**
+
+
+https://github.com/amira-azeer/React-Admin-Dashboard-With-Backend/assets/103902057/e728e1ee-54fe-47f3-8721-e1a708b87f63
+
