@@ -17,6 +17,11 @@ The command below is issued to intiate the application from both the client and 
 ```
 
 ## **Dashboard Demostration**
-
-https://github.com/amira-azeer/React-Admin-Dashboard-With-Backend/assets/103902057/e728e1ee-54fe-47f3-8721-e1a708b87f63
-
+Provided below are a snippets from the application.
+<div>
+    <img src="rep_assets/Dashboard.png" alt="Dashboard" width="500"/>
+    <img src="rep_assets/Customers.png" alt="Customer" width="500"/>
+    <img src="rep_assets/Products.png" alt="Products" width="500"/>
+    <img src="rep_assets/Geography.png" alt="Dashboard" width="500"/>
+    <img src="rep_assets/Transaction.png" alt="Transaction" width="500"/>
+</div>
