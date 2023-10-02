@@ -17,7 +17,7 @@ The command below is issued to intiate the application from both the client and 
 ```
 
 ## **Dashboard Demostration**
-Provided below are a snippets from the application.
+Provided below are a snippets from the application. For a motion demo of the application, a video with the name 'demo.mp4' in the rep_assets directory will provide an insight into the entire working application and its flow.
 <div>
     <img src="rep_assets/Dashboard.png" alt="Dashboard" width="500"/>
     <img src="rep_assets/Customers.png" alt="Customer" width="500"/>
